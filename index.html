@@ -3,132 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neo | Game Portfolio</title>
+  <title>Neon Dodge | Game</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Background Glow -->
-  <div class="bg-glow"></div>
+  <div class="hud">
+    <div>❤️ <span id="lives">3</span></div>
+    <div>⭐ Score: <span id="score">0</span></div>
+    <div class="hint">Move: WASD / Arrow • Restart: R</div>
+  </div>
 
-  <header class="navbar">
-    <div class="logo">🎮 NEO<span class="accent">.GG</span></div>
-    <nav>
-      <a href="#profile">Profile</a>
-      <a href="#missions">Missions</a>
-      <a href="#inventory">Inventory</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <canvas id="game"></canvas>
 
-  <!-- HERO -->
-  <section id="profile" class="hero">
-    <div class="hero-left">
-      <p class="tag">ONLINE • READY TO QUEUE</p>
-      <h1 class="title glitch" data-text="NEO TADOKAIND">NEO TADOKAIND</h1>
-      <p class="subtitle">Game Dev • Web Dev • UI Designer</p>
-
-      <div class="stats">
-        <div class="stat">
-          <span>LEVEL</span>
-          <strong>27</strong>
-        </div>
-        <div class="stat">
-          <span>ROLE</span>
-          <strong>Builder</strong>
-        </div>
-        <div class="stat">
-          <span>RANK</span>
-          <strong>Legend</strong>
-        </div>
-      </div>
-
-      <div class="xpbar">
-        <div class="xp-fill" id="xpFill"></div>
-        <span class="xp-text">XP 72%</span>
-      </div>
-
-      <div class="btns">
-        <a class="btn primary" href="#missions">Start Missions</a>
-        <a class="btn ghost" href="#contact">Send Invite</a>
-      </div>
+  <div class="overlay" id="overlay">
+    <div class="panel">
+      <h1>NEON DODGE</h1>
+      <p>Hindari meteor selama mungkin.</p>
+      <button id="startBtn">START</button>
+      <p class="small">WASD / Arrow • R restart</p>
     </div>
+  </div>
 
-    <div class="hero-right">
-      <div class="avatar-frame">
-        <img src="assets/avatar.png" alt="avatar" onerror="this.style.display='none';"/>
-        <div class="avatar-placeholder">Upload avatar di assets/avatar.png</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSIONS / PROJECTS -->
-  <section id="missions" class="section">
-    <h2 class="section-title">🧩 Missions (Projects)</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Mission #1 — Pixel Runner</h3>
-        <p>Game endless runner pixel style, built with JS canvas.</p>
-        <div class="card-links">
-          <a href="#" target="_blank">▶ Play</a>
-          <a href="#" target="_blank">💾 Repo</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Mission #2 — RPG Inventory UI</h3>
-        <p>UI/UX design inventory RPG style (responsive).</p>
-        <div class="card-links">
-          <a href="#" target="_blank">👀 Preview</a>
-          <a href="#" target="_blank">💾 Repo</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Mission #3 — Neon Portfolio</h3>
-        <p>Gaming theme portfolio untuk GitHub Pages.</p>
-        <div class="card-links">
-          <a href="#" target="_blank">🌐 Live</a>
-          <a href="#" target="_blank">💾 Repo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INVENTORY / SKILLS -->
-  <section id="inventory" class="section">
-    <h2 class="section-title">🎒 Inventory (Skills)</h2>
-
-    <div class="inventory">
-      <div class="item">⚔️ JavaScript</div>
-      <div class="item">🛡️ HTML / CSS</div>
-      <div class="item">🧠 Game Logic</div>
-      <div class="item">🎨 UI/UX</div>
-      <div class="item">⚡ React</div>
-      <div class="item">🔧 Node.js</div>
-      <div class="item">🕹️ Unity (optional)</div>
-      <div class="item">✨ Animation</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2 class="section-title">📡 Contact (Party Invite)</h2>
-    <p class="desc">Siap collab / kerja bareng? Kirim invite:</p>
-
-    <div class="contact-grid">
-      <a class="contact-card" href="mailto:emailkamu@gmail.com">📧 Email</a>
-      <a class="contact-card" href="https://github.com/username" target="_blank">💻 GitHub</a>
-      <a class="contact-card" href="https://linkedin.com/in/username" target="_blank">🔗 LinkedIn</a>
-      <a class="contact-card" href="#" target="_blank">🎮 itch.io (opsional)</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© <span id="year"></span> Neo • Powered by Neon Core ⚡</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
